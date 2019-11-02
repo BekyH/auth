@@ -27,4 +27,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-this simple tokenbased authentication with vue and express.
+this is simple tokenbased authentication with vue and express which uses mongodb as database.
