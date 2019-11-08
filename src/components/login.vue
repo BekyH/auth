@@ -1,4 +1,4 @@
-<template>
+ <template>
     <v-container>
         <v-layout row wrap>
             <v-flex xs12 class="pt-3">
@@ -11,6 +11,7 @@
                     <v-text-field label="Password" v-model="user.password" :rules="passwordrules" required></v-text-field>
                     <v-flex class="mt-3">
                         <v-checkbox
+  
                         v-model="checkbox"
                         label="Remember me"
                         ></v-checkbox>
@@ -57,9 +58,10 @@ export default {
                password:this.user.password
            }
            axios.post(api,User)
-           .then((res)=>{
+           .then(()=>{
                
-               localStorage.setItem('token',res.data.token);
+               this.$store.commit("setAuthentication", true);
+                              
                this.$router.push('/home');
 
            })
